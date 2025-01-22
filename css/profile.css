@@ -1,0 +1,71 @@
+/* profile................................... */
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+    grid-template-rows: 3rem 5rem 30rem;
+    background-color: white;
+}
+.profile{
+    padding: 5% 8%;
+    grid-area: 3/1/3/13;
+}
+.profile .details{
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    margin-top: 2rem;
+}
+.profile .details .user{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.profile .details .user img{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    background-color: var(--main-color);
+}
+.profile .details .user h3{
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+.profile .details .user p{
+    font-size: 1.7rem;
+    color: gray;
+    margin-bottom: 2rem;
+}
+.profile .details .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+.profile .details .box-container .box{
+    background-color: #cccccc11;
+    border-radius: .5rem;
+    padding: 1.5rem 2rem;
+    flex: 1 1 15rem;
+}
+.profile .details .box-container .box .flex{
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    margin-bottom: 1rem;
+}
+.profile .details .box-container .box .flex i{
+    font-size: 2.5rem;
+}
+.profile .details .box-container .box .flex h3{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: .2rem;
+}
+.profile .details .box-container .box .flex span{
+    font-size: 1.5rem;
+    color: Lightgray;
+}

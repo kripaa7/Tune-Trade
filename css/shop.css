@@ -1,0 +1,365 @@
+#container {
+    display: grid;
+    /* grid-template-columns: repeat(12, 1fr); */
+    grid-template-columns: (auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: 3rem 5rem 60rem;
+    background-color: white;
+}
+.products {
+    grid-area: 3/1/3/13;
+    padding: 2%;
+    background-color: #f9f9f9;
+}
+.product-details{
+    grid-area: 3/1/3/13;
+    padding: 2%;
+    background-color: #f9f9f9;
+}
+.products .box-container {
+    gap: 1.2rem; 
+}
+.products .box-container .box {
+    position: relative;
+    margin: 0.5rem;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.products .box-container .box:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+.products .box-container .box .stock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.8rem; /* Smaller text */
+    font-weight: bold;
+    padding: 0.3rem 0.7rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+.products .box-container .box .image {
+    width: 100%;
+    height: 150px; /* Reduced height for smaller images */
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+.products .box-container .box:hover .image {
+    transform: scale(1.03);
+}
+.products .box-container .box .content .price {
+    font-size: 1.1rem; /* Slightly smaller price font */
+    font-weight: bold;
+    color: crimson;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+.products .box-container .box .content {
+    display: flex; /* Flexbox for layout control */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Start items from the top */
+    text-align: center; /* Center align text and elements */
+    padding: 1rem; /* Add padding for better spacing */
+}
+
+.products .box-container .box .content .name {
+    font-size: 1.3rem; /* Slightly increase font size for better visibility */
+    font-weight: bold; /* Ensure the name stands out */
+    margin-bottom: 1rem; /* Add spacing below the name */
+}
+
+.button {
+    display: flex; /* Flexbox for buttons */
+    flex-direction: row; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+    gap: 1rem; /* Add space between buttons */
+}
+
+.products .box-container .box .content .button button,
+.products .box-container .box .content .button a {
+    background-color: var(--main-color); /* Apply a primary color */
+    color: white; /* White text for better contrast */
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px; /* Rounded corners for better aesthetics */
+    width: auto;
+    height: 2.5rem;
+    text-align: center; /* Center align button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.products .box-container .box .content .button button:hover,
+.products .box-container .box .content .button a:hover {
+    background-color: var(--green-color); /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Style the qty-box container */
+.products .box-container .box .content .flex-btn {
+    display: grid; /* Use grid to align input and button */
+    grid-template-columns: 1fr 1fr; /* Divide the space into two equal parts */
+    gap: 1rem; /* Space between the input and button */
+    align-items: center; /* Center align the content */
+    margin-top: 1rem; /* Add space at the top */
+}
+
+/* Style for the qty input box */
+.products .box-container .box .content .flex-btn input.qty-box {
+    width: 100%; /* Make the input take up full width of its container */
+    padding: 0.5rem; /* Padding inside the input */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size for the input */
+    text-align: center; /* Center the text inside the input */
+    transition: border-color 0.3s ease; /* Smooth border color change on focus */
+}
+
+/* Style for the input box on focus */
+.products .box-container .box .content .flex-btn input.qty-box:focus {
+    border-color: var(--main-color); /* Change border color when input is focused */
+    outline: none; /* Remove outline */
+}
+
+/* Style for the buyNow button */
+.products .box-container .box .content .flex-btn .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Product Details */
+/* Product Details Section */
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* Space between image and product info */
+    margin-top: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Product Image */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Info */
+.product-info {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #27ae60; /* Green color for price */
+}
+
+.product-info .stock {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.product-info .qty-box {
+    width: 60px;
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.product-info .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.product-info .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Buy Now Button */
+.product-info button[name="buy_now"] {
+    background-color: var(--main-color);
+}
+
+.product-info button[name="buy_now"]:hover {
+    background-color: var(--main-color);
+}
+
+
+/* Related Products */
+.related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.related-products h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.related-products .product-box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.related-products .product-box {
+    width: 280px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-products .product-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.related-products .product-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.related-products .product-box h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.related-products .product-box p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.related-products .product-box .btn {
+    padding: 10px 25px;
+    background-color: #16a085;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.related-products .product-box .btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Styling for the back button */
+.back-btn a {
+    display: inline-block;
+    background-color: var(--main-color);
+   
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.back-btn a:hover {
+    background-color: var(--green-color);
+}
+
+/* filter */
+.filter-section {
+    margin: 1.5rem 20rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filter-section form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-section input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.filter-section button {
+    padding: 0.5rem 1rem;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-section button:hover {
+    background-color: var(--green-color);
+}

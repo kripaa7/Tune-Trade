@@ -1,0 +1,12 @@
+# Ignore .env files
+.env
+
+# Ignore log files and debug output
+*.log
+
+# Ignore Composer's vendor directory
+/vendor/
+
+# Ignore IDE and OS-specific files
+.idea/
+.DS_Store

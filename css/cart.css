@@ -1,0 +1,157 @@
+.container {
+    display: grid;
+    /* grid-template-columns: repeat(12, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: 3rem 5rem 30rem;
+    background-color: white;
+}
+/* variables */
+:root{
+    --space: 2rem;
+    --main-color: #AA5757;
+    --green-color: #6A826A;
+    --backdrop-filter: blur(5px);
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+}
+.products{
+    padding: 5% 8%;
+    grid-area: 3/1/3/13;
+}
+.sub-total{
+    font-size: 1.5rem;
+    margin: 0.4rem;
+}
+.cart-total{
+    text-align: center;
+    padding: 4%;
+    margin: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+
+}
+.cart-total p{
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+}
+.cart-total p span{
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.cart-total .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-total .btn {
+    margin: .5rem;
+}
+
+/* previous........ */
+.products .box-container .box{
+    position: relative;
+    margin: 1rem;
+    overflow: hidden;
+}
+.products .box-container .box .stock{
+    position: absolute;
+    top: 2%;
+    Left: 2%;
+    font-size: 1rem;
+    background-color: var(--white-alpha-40);
+    padding: .4rem 1rem;
+    border-radius: 10px;
+}
+.products .box-container .box .image{
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    transition: .5s;
+    background-color: palegreen;
+}
+.products .box-container .box:hover .image{
+    transform: scale(1.1);
+}
+.products .box-container .box .content {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    padding: 40px 10px;
+    margin-top: -80px;
+    border-top-right-radius: 80px;
+    text-align: center;
+    Line-height: 1.5;
+    text-transform: capitalize;
+}
+.products .box-container .box .content .shap {
+    position: absolute;
+    left: 0;
+    top: -80px;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+.products .box-container .box h3{
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.products .box-container .box .price{
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.products .box-container .box .button{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.products .box-container .box .button button{
+    background-color: transparent;
+    cursor: pointer;
+}
+.products .box-container .box .button i,
+.products .box-container .box .button a{
+    color: var(--main-color);
+    margin: 0.5rem;
+    font-size: 1.8rem;
+}
+.products .box-container .box .button i,
+.products .box-container .box .button :hover{
+    color: var(--green-color);
+}
+.products .box-container .box .flex-btn{
+    justify-content: space-between;
+}
+.products .box-container .box .flex-btn input{
+    width: 48%;
+    color: var(--main-color);
+    padding: .6rem 2rem;
+    border-radius: 1.5rem;
+    font-size: 18px;
+}
+.products .box-container .box .flex-btn .btn{
+    font-size: 18px;
+    height: 45px;
+    margin-top: 1em;
+}
+.products .more{
+    margin: 3rem auto;
+    text-align: center;
+}
+.products .fa-edit{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--main-color);
+    width: 200px;
+    border-radius: 20px;
+}
